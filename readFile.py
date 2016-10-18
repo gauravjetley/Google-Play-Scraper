@@ -44,5 +44,5 @@ for line in lines:
     details = driver.find_elements_by_class_name("meta-info")
     for d in details:
       print d.text
-    except:
-      pass
+  except:
+    pass
