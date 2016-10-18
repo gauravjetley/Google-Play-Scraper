@@ -1,3 +1,9 @@
+#RUN THIS FIRST
+from selenium import webdriver
+chrome_path = r"C:\Users\ThinkPad\Downloads\chromedriver.exe"
+driver = webdriver.Chrome(chrome_path)
+
+
 fp=open("vr_links_list.txt")
 lines=fp.readlines()
 fp.close()
@@ -10,7 +16,8 @@ for line in lines:
 
     ##Description
     description = driver.find_element_by_xpath("//div[@jsname='C4s9Ed']")
-    description.text
+    description.text.encode('utf-8')
+	
 
     ##App Title
     app_title = driver.find_element_by_class_name("id-app-title")
@@ -43,6 +50,6 @@ for line in lines:
     #Details
     details = driver.find_elements_by_class_name("meta-info")
     for d in details:
-      print d.text
+      print (d.text)
   except:
     pass
